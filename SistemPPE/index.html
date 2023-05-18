@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="/SistemPPE/CSS/estilos.css">
+    <link rel="stylesheet" type="text/css" href="/SistemPPE/CSS/reset.css">
+    <link rel="stylesheet" type="text/css" href="/SistemPPE/CSS/ventanas.css"> 
+    <script src="https://code.jquery.com/jquery-3.3.1.js">
+    </script> 
+    <script src="JS/Validaciones.js"></script>  
+      <title>Registro</title>
+  </head>
+<body>
+  <div class="submenu">
+    <div class="presentacion">
+      <img class="img" src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="Icono de contacto de personas">
+      <div class="inf">
+        <button type="button" class="btn btn-info"  id="btn-abrir-popup">Info</button>
+      </div>
+      <div class="Duo-menu" >
+        <form action="/SistemPPE/MVC/submit.php?clave=validarp1" method="POST">
+          <div class="party">
+            <div class="Datos-p">
+              <input class="form-controlI" id='Mayusculas' type="text" 
+                  required placeholder="Curp" name="curp"  />
+              <div class="info" id="cv"></div><br>
+              <input class="form-controlI" type="email" required placeholder="Correo"name="correo"/> 
+              <div class="info" id="co"></div>
+            </div> 
+            <div class="Datos-s">
+              <input class="form-controlI" id='Mayusculas' type="text" 
+              required placeholder="Confirma Curp" name="Curp-c" />
+              <div class="info" id="cv-c"></div><br>
+              <input class="form-controlI" type="email" required placeholder="Confirma Correo" name="correo-c"/>
+              <div class="info" id="co-c"></div>
+            </div> 
+          </div>
+          <br>
+             <div class="nums">
+              <?php
+                    // Paso 1: Establecer la conexión a la base de datos MySQL
+                        $conexion = mysqli_connect('localhost', 'root', '', 'bdpnz');
+
+                    // Paso 2: Realizar la consulta SQL
+                        $resultado = mysqli_query($conexion, "SELECT * FROM cat_gdo");
+
+                    // Paso 3: Generar el select con un bucle while
+                        echo'
+                         <label class="letras" >
+                           Nivel de estudios.
+                         </label><br>';
+                        echo '<select name="grado" class="form-control">';
+                        while ($fila = mysqli_fetch_assoc($resultado)) {
+                            echo '<option value="' . $fila['Id_CatGdo'] . '"> '. $fila['Categoria'] .' </option>';
+                            }   
+                        echo '</select>';
+
+                    // Cerrar la conexión a la base de datos MySQL
+                       mysqli_close($conexion);
+                ?>
+             </div>
+          <hr>
+          <div name="terminos">
+            <label class="container">
+              <input type="checkbox" name="privacidad">
+              <span class="checkmark"></span>
+              <h1 class="label">Acepto los &nbsp; 
+                <a class="link-a" value="https://www.afpsoluciones.com/aviso-legal" label="" type="url" href="https://www.afpsoluciones.com/aviso-legal" target="_blank" data-runtime-url="https://www.afpsoluciones.com/aviso-legal" id="1110063357" no_space_b="true" no_space_e="true">
+                  términos y políticas
+                </a>  
+                &nbsp;de privacidad de la información.
+              </h1>
+            </label>
+          </div>
+          <input class="btn-valq" type="submit" value="comenzar"/>
+          <div id="aviso"></div>
+          <button type="button" id="btn-abrir-popup" class="ocultarNaz">
+              ¡Ya estoy registrado!
+          </button>
+        </form> 
+      </div>
+    </div>
+  </div>
+
+<div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">cerrar</a><hr>
+        <div class="form-datos">
+            <h1 class='label'>
+              Para iniciar tu diagnóstico, se requiere que proporciones tu 
+              CURP y tu correo electrónico. El CURP es para fines de 
+              obtener estadísticas generales y el correo para enviarte el resultado de tu diagnóstico.
+            </h1> 
+              <hr></hr>
+              <h1 class='link-inf'>
+              Si no sabes cuál es tu CURP, búscalo  </h1>
+                <a href="https://www.gob.mx/curp/" class="btn btn-danger" style="margin-left: 80%"> aqui
+                </a>
+      </div>
+</div>
+
+</div>
+</div>
+<div class="overlay" id="overlays">
+    <div class="popup" id="popups">
+        <a href="#" id="btn-cerrar-popups" class="btn-cerrar-popup">Regresar</a><hr>
+        <form action="/valq_php/back/submit.php?clave=validarp1" method="POST">
+          <center>
+                <input class="form-control" id='Mayusculas' type="text" 
+                required placeholder="CURP" name="curp" />
+                <br>
+                <input class="form-control" type="text" required placeholder="correo@mailito.com"name="correo"/>
+                <hr>
+                 <input class="btn-valqc" type="submit" value="Comenzar"/>
+          </center>
+      </form>
+</div>
+
+<script src="/valq_php/JS/popup.js"></script>
+</body>
+</html>

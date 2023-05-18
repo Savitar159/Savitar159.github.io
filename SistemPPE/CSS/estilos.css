@@ -1,0 +1,288 @@
+
+.submenu{
+  background:#fff;
+  border-color:rgb(240, 240, 240);
+  border-width: 1px;
+  border-style: solid; 
+  border-radius:5%;
+  text-align: center;
+  width:30%;
+  margin: auto; /* Para centrar horizontalmente */
+  position: absolute; /* Para centrar verticalmente */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+}
+.presentacion{
+    background: url(https://img.freepik.com/vector-gratis/fondo-abstracto-blanco-minimalista_23-2148816315.jpg?w=360)
+      no-repeat center center fixed;
+      -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius:5%;
+    width:100%;
+  }
+.img{
+  padding:2%;
+  width:40%;
+  height:auto;
+}
+.inf {
+    position: fixed;
+    z-index: 9999;
+    margin-left:85%;
+    margin-top:-9%
+}
+.Duo-menu{
+    background:#FFF;
+    border-radius:5%;
+    padding:5%;
+    width:100%;
+}
+.Datos-p{
+  margin-right:5%;
+  width:43%;
+}
+.Datos-s{
+  width:43%;
+}
+.nums{
+  margin-left:5%;
+  width:43%;
+}
+.letras{
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  color:#bbb;
+  float:left;
+}
+.party {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente, si es necesario */
+}
+.form-controlI {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  border: none;
+  color:#60605D;
+  border-bottom: 2px solid #ddd;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+input[type="email"]::placeholder {
+  text-align: left;
+}
+.form-controlI:focus {
+  border-bottom: 2px solid #ff6600;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-controlI::placeholder {
+  color: #bbb;
+}
+
+.form-controlI:-ms-input-placeholder {
+  color: #bbb;
+}
+
+.form-controlI::-ms-input-placeholder {
+  color: #ff6600;
+}
+  .btn-valq{
+ text-decoration: none;
+    display:inline-block;
+    width:35%;
+    padding:10px;
+    border: 1px solid #ff6600;
+    border-radius:6px;
+    text-decoration: none;
+    color:#ff6600;
+    font-weight: bold;
+    transition: all 0.9s;
+    text-align: center;
+    background: #fff;
+}
+.btn-valq:hover{
+ 
+    background: #ff6600;
+    color:white;
+
+  }
+
+  /* Estilo para el campo de entrada de CURP */
+  #Mayusculas {
+    text-transform: uppercase;
+  }
+
+  /* Estilo para el campo de entrada de correo electrónico */
+  input[type="email"] {
+    text-align: center;
+  }
+  /* Estilos generales */
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Estilos para la etiqueta de verificación */
+  .container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+  }
+
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left:5%;
+    border-radius:100%;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color:#FF6600;
+  }
+
+  .checkmark:after {
+    color: #FF6600;
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Estilos para el enlace */
+  .link-a {
+    color: #FF6600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .link-a:hover {
+    color: #FF6600;
+  }
+
+  /* Estilos para el texto */
+  .label {
+    display: inline;
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    color: #333;
+  }
+  .info{
+    margin-top:-10%; 
+  }
+  .ocultarNaz{
+    display: none;
+  }
+  .error{
+    color:#FF3F3F;
+    font-size:15px;
+  }
+  .cool{
+    color: #33C481;
+    font-size:15px;
+  }
+
+  /* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 900px) {
+  .checkmark{
+    left:-2%;
+  }
+  .submenu {
+    width: 80%;
+  }
+  .info{
+    margin-top:-8%; 
+  }
+  .img {
+    width: 50%;
+    height: auto;
+  }
+  
+  .Datos-p, .Datos-s {
+    width: 90%;
+    margin-right: 0;
+  }
+  .Datos-p {
+  order: 1;
+}
+.Datos-s {
+    margin-top: 2%;
+  order: 2;
+}
+.nums{
+  width:90%;
+}
+.letras{
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  color:#bbb;
+  float:left;
+}
+.party {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente, si es necesario */
+}
+  .btn-valq {
+    width: 50%;
+  }
+  
+  .container {
+    padding-left: 25px;
+  }
+  
+  .container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 6px;
+    border-width: 0 2px 2px 0;
+  }
+  
+  .label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
